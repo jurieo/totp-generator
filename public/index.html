@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TOTP Generator</title>
+  <title>TOTP 令牌生成器</title>
   <link rel="stylesheet" href="css/bulma-0.9.4.min.css">
   <style>
     [v-cloak] {
@@ -42,31 +42,31 @@
 
     <div class="container">
 
-      <h1 class="title">TOTP Token Generator</h1>
+      <h1 class="title">TOTP 令牌生成器</h1>
 
       <div class="field">
-        <label class="label is-uppercase">Your Secret Key</label>
+        <label class="label is-uppercase">你的密钥</label>
         <div class="control">
           <input class="input" type="text" v-model="secret_key" placeholder="The secret key (in base-32 format)">
         </div>
       </div>
 
       <div class="field">
-        <label class="label is-uppercase">Number of Digits</label>
+        <label class="label is-uppercase">长度</label>
         <div class="control">
           <input class="input" type="text" v-model="digits" placeholder="Usually 6">
         </div>
       </div>
 
       <div class="field">
-        <label class="label is-uppercase">Token Period (in seconds)</label>
+        <label class="label is-uppercase">令牌周期（单位：秒）</label>
         <div class="control">
           <input class="input" type="text" v-model="period" placeholder="Usually 30">
         </div>
       </div>
 
       <div class="content">
-        <span class="has-text-grey is-size-7">Updating in {{ updatingIn }} seconds</span>
+        <span class="has-text-grey is-size-7">有效期剩余 {{ updatingIn }} 秒</span>
         <progress class="progress is-info is-small" v-bind:value="updatingIn" :max="period"></progress>
       </div>
 
@@ -75,7 +75,7 @@
       </div>
 
       <div class="control is-clearfix">
-        <a class="button is-large is-light is-pulled-right" id="clipboard-button" data-clipboard-target="#token" title="Copy token to clipboard">
+        <a class="button is-large is-light is-pulled-right" id="clipboard-button" data-clipboard-target="#token" title="复制到剪贴板">
           <img src="img/clippy.svg" height="36" width="36">
         </a>
       </div>
@@ -87,7 +87,7 @@
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
-        Built by <a href="https://dan.hersam.com">Dan Hersam</a>. Source on <a href="https://github.com/jaden/totp-generator">Github</a>.
+        便捷的chatgpt和claude账号共享服务  <a href="https://github.com/jurieo/chatgpt-share-web">chatgpt-share-web</a>
       </div>
     </div>
   </footer>
